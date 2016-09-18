@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load material_form %}
+
+{% block title %}Login{{ block.super }}{% endblock %}
+
+
+{% block content %}
+
+
+<div class="card">
+
+    <div class="card-content">
+        <span style="font-size: 30pt; font-weight: lighter">Login Form</span><br>
+            <form method="post" action="." class="viewform">
+                    {% csrf_token %}
+
+                    {% form %}
+                        {% part form.username prefix %}<i class="mdi-communication-email prefix"></i>
+                        {% part form.username label%}<label>Email</label>{% endpart %}{% endpart %}
+                        {% part form.password prefix %}<i class="mdi-action-lock-open prefix"></i>{% endpart %}
+                    {% endform %}
+
+                    <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Submit' %}" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+<br>
+    <div class="card-action.blue">
+           <p>
+                {% trans "FORGOT PASSWORD" %}? <a href="{% url 'auth_password_reset' %}">{% trans "RESET IT" %}</a>
+                &emsp;|&emsp;
+                {% trans "NOT MEMBER" %}? <a href="{% url 'registration_register' %}">{% trans "REGISTER" %}</a></p>
+
+    </div>
+    </div>
+
+</div>
+
+{% endblock %}

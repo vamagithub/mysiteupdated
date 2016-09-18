@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load material_form %}
+
+{% block title %}Logged Out{{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="card">
+
+    <div class="card-content">
+        <span style="font-size: 30pt; font-weight: lighter">You've been logged out!</span><br>
+
+    <div class="card-action.blue">
+           <p><font size="3.5">
+                <a href="{% url 'auth_login' %}">Log back in</a>, if this was a mistake, otherwise, nice seeing you!
+               </font> </p>
+    </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

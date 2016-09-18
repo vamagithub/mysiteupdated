@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Dashboard{{ block.super }}{% endblock %}
+
+{% block content %}
+
+        <div class="row">
+                <br>
+                <div class="breadcrumb-pagination">
+
+                  <div class="active">
+                        <span>1</span>
+                        <p>Upload Form-16</p>
+                  </div>
+
+                  <div class="todo">
+                        <span>2</span>
+                        <p>Form</p>
+                  </div>
+
+                  <div class="todo">
+                        <span>3</span>
+                        <p>CheckOut</p>
+                  </div>
+
+                </div>
+
+        </div>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+
+
+<div class="card">
+    <div class="card-content">
+        <div class="container">
+            <br>
+             <form method="post" action="" enctype="multipart/form-data" >{% csrf_token %}
+
+
+                    <div class="row">
+                         <div class="input-field col s12" >
+                            {{form.yr}}
+                           <label>Assessment Year</label>
+                         </div>
+                    </div>
+
+                    <br>
+
+                     <div class="row">
+                         <div class="file-field input-field">
+                              <div class="btn">
+                                <span>File</span>
+                                <input type="file" name="files" multiple required>
+                              </div>
+
+                              <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                              </div>
+                        </div>
+
+                 <button class="btn waves-effect waves-light blue darken-1" type="submit" value="Upload">Send
+                        <i class="mdi-content-send right white-text"></i>
+                 </button>
+
+
+                 <p>
+                     Lorem ipsum dolor sit amet, cibo adipisci no mea. Sint feugiat eloquentiam eam an,convenire reformidans in pro,quo enim tritani praesent ne. Te vix laudem accusamus
+                     You can upload pdf, blh blah blhdhfksdhfkh..........rtf,jpg,word,txt any damn thing.
+                     Sea minimum elaboraret dissentiunt ea. An nec dolor quidam.
+                 </p>
+
+            </div>
+
+
+            </form>
+
+    </div>
+</div></div>
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+ <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+
+                <a href="#" id="logo-container" class="brand-logo">easyreturns-&beta;</a>
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="http://rbgco.in/" target="_blank">Blog</a></li>
+
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'dash' %}">Dashboard</a></li>
+                        <li><a href="{% url 'settings' %}">Settings</a></li>
+                        <li><a href="{% url 'auth_logout' %}" class="button">Logout</a></li>
+
+                    {% else %}
+                        <li><a href="{% url 'auth_login' %}" class="button">Login/SignUp</a></li>
+                    {% endif %}
+
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" target="_blank">Blog</a></li>
+
+
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'dash' %}">Dashboard</a></li>
+                        <li><a href="{% url 'settings' %}">Settings</a></li>
+                        <li><a href="{% url 'auth_logout' %}" class="button">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'auth_login' %}" class="button">Login</a></li>
+                    {% endif %}
+
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>

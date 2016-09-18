@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load material_form %}
+
+{% block title %}Register{{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row">
+                <br>
+                <div class="breadcrumb-pagination">
+
+                  <div class="active">
+                        <span>1</span>
+                        <p>Registration</p>
+                  </div>
+
+                  <div class="todo">
+                        <span>2</span>
+                        <p>Create Profile</p>
+                  </div>
+
+
+                </div>
+
+        </div>
+
+<div class="card">
+
+    <div class="card-content">
+        <span style="font-size: 30pt; font-weight: lighter">Registration Form</span><br>
+            <form method="post" action="." class="viewform">
+                    {% csrf_token %}
+
+                    {% form %}
+                        {% part form.email prefix %}<i class="mdi-communication-email prefix"></i>{% endpart %}
+                        {% part form.password1 prefix %}<i class="mdi-action-lock-open prefix"></i>{% endpart %}
+                        {% part form.password2 prefix %}<i class="mdi-action-lock-outline prefix"></i>{% endpart %}
+
+                    {% endform %}
+                    <p>
+                        <input type="checkbox" id="test5" required />
+                        <label for="test5">I here by Agree to EasyReturns <a href=" {% url 'tandc' %}">Terms and Conditions</a></label>
+                    </p>
+                    <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Now,Create My Profile' %}" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        <br>
+
+    </div>
+
+</div>
+
+{% endblock %}

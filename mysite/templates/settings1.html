@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Settings{{ block.super }}{% endblock %}
+{% block content %}
+
+<a href="{% url 'registration_create_thing' %}">Create Profile</a>
+<h1>this is setting 1</h1>
+{% endblock %}

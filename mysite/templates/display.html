@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load material_form %}
+
+{% block title %}Process{{ block.super }}{% endblock %}
+
+{% block content %}
+
+ <div class="container">
+            <div class="row">
+                <br>
+                    <div class="breadcrumb-pagination">
+
+                          <div class="completed">
+                                <span></span>
+                                <p>Upload Form-16</p>
+                          </div>
+
+                          <div class="active">
+                                <span>2</span>
+                                <p>Form</p>
+                          </div>
+
+                          <div class="todo">
+                                <span>3</span>
+                                <p>CheckOut</p>
+                          </div>
+
+                    </div>
+            </div>
+    </div>
+
+
+    <div class="card">
+
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-3">
+            Your files has been successfully uploaded to our
+            servers, also please fill this form to complete
+            our process.
+        <br>
+        </span><br>
+
+    <div align="center" class="card-action.blue">
+            <a href="{%  url 'data' %}">
+                <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Click to Fill the Form' %}" />
+            </a>
+    </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

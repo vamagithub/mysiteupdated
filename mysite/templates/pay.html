@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Process{{ block.super }}{% endblock %}
+
+{% block content %}
+
+            <div class="row">
+                <br>
+                    <div class="breadcrumb-pagination">
+
+                          <div class="completed">
+                                <span></span>
+                                <p>Upload Form-16</p>
+                          </div>
+
+                          <div class="completed">
+                                <span></span>
+                                <p>Form</p>
+                          </div>
+
+                          <div class="active">
+                                <span>3</span>
+                                <p>CheckOut</p>
+                          </div>
+
+                    </div>
+            </div>
+
+
+    <div class="card">
+        <div class="card-content">
+            <span  style="font-size: 20pt; font-weight: lighter;">
+                Your form has been uploaded please pay to proceed your e-filing
+            </span><br>
+
+            <div class="card-action.blue">
+                   <p><font size="3.5">
+                        <a href="#">
+                            <button class="btn waves-effect waves-light red darken-1" type="submit">Pay
+                                <i class="mdi-content-send right white-text"></i>
+                            </button>
+                        </a>
+                       </font>
+                   </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+/*-------------------------------------------------------------
+    Variables
+-------------------------------------------------------------*/
+
+$easeOutExpo:  cubic-bezier(0.19, 1, 0.22, 1);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutQuad:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+$easeInQuart:  cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeInQuad:   cubic-bezier(0.55, 0.085, 0.68, 0.53);
+
+$transition-duration: 0.4s;
+$transition-easing: $easeOutExpo;
+
+
+/*-------------------------------------------------------------
+    Mixins
+-------------------------------------------------------------*/
+
+@mixin transition($props, $duration: $transition-duration, $easing: $transition-easing) {
+    @if(type-of($props) == list) {
+        transition: none $duration $easing;
+        transition-property: $props;
+    } @else {
+        transition: $props $duration $easing;
+    }
+}
+
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin clearfix {
+    &:before, &:after { content: " "; display: table; }
+    &:after { clear: both; }
+}
+
+/*-------------------------------------------------------------
+    Starter styles
+-------------------------------------------------------------*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a,
+button,
+input {
+    @include transition((color, border-color, background-color, opacity));
+}
+
+
+/*-------------------------------------------------------------
+    Helpers
+-------------------------------------------------------------*/
+
+.hidden-accessible {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    opacity: 0;
+}

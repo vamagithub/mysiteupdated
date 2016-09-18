@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load material_form %}
+
+{% block title %}Registration Completed{{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-content">
+        <span style="font-size: 30pt; font-weight: lighter">You are now registered. Activation email sent.</span><br>
+
+    <div class="card-action.blue">
+           <p>
+               <font size="3.5">
+                Go to <a href="{% url 'home' %}">Home</a>
+               </font>
+           </p>
+    </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

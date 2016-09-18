@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Page Not Found{{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-content">
+            <span  style="font-size: 20pt; font-weight: lighter;">
+                Oops, 404. :(
+
+               <p> This shouldn't happen and yet, here we are.
+                Are you sure you typed in the correct address? Feel free to email us at
+                <a href="#" >easyreturns.tax@gmail.com</a>
+                and let us know about the error!</p>
+            </span><br>
+
+        </div>
+    </div>
+
+{% endblock %}

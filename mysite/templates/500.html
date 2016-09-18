@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Internal Server Error{{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-content">
+            <span  style="font-size: 20pt; font-weight: lighter;">
+                Oops, 500. :(
+
+               <p> This shouldn't happen and yet, here we are.<br>
+                The server encountered an internal error or misconfiguration and was unable to complete your request.<br>
+
+Please contact the server administrator, <a href="#" >easyreturns.tax@gmail.com</a> and
+inform them of the time the error occurred,and
+anything you might have done that may have caused the error.<br>
+
+More information about this error may be avaliable in the server log.
+
+                and let us know about the error!</p>
+            </span><br>
+
+        </div>
+    </div>
+
+{% endblock %}

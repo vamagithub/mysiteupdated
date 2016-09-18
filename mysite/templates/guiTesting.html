@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load material_form %}
+{% block title %}GUI Testing{{ block.super }}{% endblock %}
+
+{% block content %}
+<style>
+    #outdated-warning {
+    background-color: green;
+    color: yellow;
+    height: 5%;
+    width: 100%;
+    text-align: center;
+
+
+</style>
+<div align="center" id="outdated-warning">
+  This document is for an insecure version of Django that is no longer supported. Please upgrade to a newer release!
+</div>
+
+
+<p>
+    <input placeholder="ToolTip" <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip"></a> />
+</p>
+
+
+<script>
+
+     $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+
+
+</script>
+
+
+{% endblock %}

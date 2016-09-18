@@ -1,0 +1,326 @@
+
+{% load staticfiles %}
+
+
+<html>
+
+<head><title>Form | EasyReturns</title></head>
+{% include 'head.html' %}
+
+   <body id="top" class="scrollspy">
+
+    {% include 'nav.html' %}
+    <div class="container">
+            <div class="row">
+                <br>
+                    <div class="breadcrumb-pagination">
+
+                          <div class="completed">
+                                <span></span>
+                                <p>Upload Form-16</p>
+                          </div>
+
+                          <div class="active">
+                                <span>2</span>
+                                <p>Form</p>
+                          </div>
+
+                          <div class="todo">
+                                <span>3</span>
+                                <p>CheckOut</p>
+                          </div>
+
+                    </div>
+            </div>
+    </div>
+
+
+
+    <div class="container">
+          <div class="col l6 s12">
+              <br>
+                <form class="col s12" action="{% url 'myfield.views.data' %}" method="post">{% csrf_token %}
+                    <div class="row">
+
+                        <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+                        <p><b>House Property</b></p>
+
+                        <!--########################################################################-->
+                        <div class="input-field col s3">
+                            <i class="material-icons prefix">store</i>
+                            <label  class="black-text">First House :</label>
+                        </div>
+                        <div class="input-field col s2">
+                          <input disabled value="Assumbed to be " id="disabled" type="text" class="validate">
+                          <label for="disabled">Rent Received</label>
+                        </div>
+                        <div class="input-field col s2">
+                          <input disabled value="Self Occupied" id="disabled1" type="text" class="validate">
+                          <label for="disabled">Municipal Tax</label>
+                        </div>
+                        <div class="input-field col s2">
+                            <input id="f_i" name="first_interest" type="text" class="validate black-text" required>
+                            <label for="f_i" class="black-text">Interest</label>
+                        </div>
+                        <div class="input-field col s2">
+                            <input id="f_p" name="first_principal" type="text" class="validate black-text" required>
+                            <label for="f_p" class="black-text">Principal</label>
+                        </div>
+
+                        <!--######################################################################-->
+                        <div class="input-field col s3">
+                            <i class="material-icons prefix">business</i>
+                            <label for="icon_prefix" class="black-text">Other House :</label>
+                        </div>
+                        <div class="input-field col s2">
+
+                            <input id="o_r" name="other_rent" type="text" class="validate black-text" required>
+                            <label for="o_r" class="black-text">Rent Received</label>
+                        </div>
+                        <div class="input-field col s2">
+
+                            <input id="o_t" name="other_tax" type="text" class="validate black-text" required >
+                            <label for="o_t" class="black-text">Municipal Tax</label>
+                        </div>
+                        <div class="input-field col s2">
+
+                            <input id="o_i" name="other_interest" type="text" class="validate black-text" required >
+                            <label for="o_i" class="black-text">Interest</label>
+                        </div>
+                        <div class="input-field col s2">
+
+                            <input id="op" name="other_principal" type="text" class="validate black-text" required>
+                            <label for="op" class="black-text">Principal</label>
+                        </div></div>
+                        <!--#############################################################-->
+
+                        <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+                        <div class="row">
+                        <p><b>Other Income</b></p>
+
+                        <div class="input-field col s4">
+                            <input  name="save_acc" type="text" class="validate black-text"  required>
+                            <label  class="black-text">Interest on savings bank account</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="fd" name="fixed_deposit" type="text" class="validate black-text"  required>
+                            <label for="fd" class="black-text">Interest on fixed deposit</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="ki" name="kvp_ivp" type="text" class="validate black-text" required >
+                            <label for="ki" class="black-text">Interest earned on KVP/IVP</label>
+                        </div>
+                            <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+                            <!--DROPBOX 1-->
+                        <div class="input-field col s6" >
+                            {{form.fd_1}}
+                           <label> Interest on NSC</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="n1" name="nsc_1" type="text" class="validate black-text"  required>
+                            <label for="n1" class="black-text">Amount</label>
+                        </div>
+                            <!--DROPBOX 2-->
+                        <div class="input-field col s6" >
+                            {{form.fd_2}}
+                           <label> Interest on NSC</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="n2" name="nsc_2" type="text" class="validate black-text"  required>
+                            <label for="n2" class="black-text">Amount</label>
+                        </div>
+
+                            <!--DROPBOX 3-->
+
+                        <div class="input-field col s6" >
+                            {{form.fd_3}}
+                            <label> Interest on NSC</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="n3" name="nsc_3" type="text" class="validate black-text" required >
+                            <label for="n3" class="black-text">Amount</label>
+                        </div>
+
+                            <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+                        <div class="input-field col s3">
+                            <input id="bd" name="b_d" type="text" class="validate black-text" required >
+                            <label for="bd" class="black-text">Interest earned on Bonds&Debenture</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="i" name="i_property" type="text" class="validate black-text" required >
+                            <label for="i" class="black-text">Purchase of immovable property</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="p" name="ppf" type="text" class="validate black-text" required >
+                            <label for="p" class="black-text">Interest earned on PPF</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="pen" name="pension" type="text" class="validate black-text"  required>
+                            <label for="pen" class="black-text">Pension Received</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="due" name="interest_due" type="text" class="validate black-text"  required>
+                            <label for="due" class="black-text">Interest Due</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="re" name="p_repayment" type="text" class="validate black-text"  required>
+                            <label for="re" class="black-text">Principal Repayment </label>
+                        </div>
+                        </div>
+                        <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+                        <div class="row">
+                            <p><b>Deductions</b></p>
+
+                        <div class="input-field col s4">
+                            <input id="l" name="lic" type="text" class="validate black-text"  required>
+                            <label for="l" class="black-text">LIC Premium</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="f" name="fdr" type="text" class="validate black-text"  required>
+                            <label for="f" class="black-text">Tax Saver FDR</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="fee" name="fees" type="text" class="validate black-text"  required>
+                            <label for="fee" class="black-text">Tuition Fees</label>
+                        </div>
+                            <div class="input-field col s4">
+                            <input id="mf" name="mf_uti" type="text" class="validate black-text" required >
+                            <label for="mf" class="black-text"> Investment in notified MF/UTI</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="n" name="n_pension" type="text" class="validate black-text" required >
+                            <label for="n" class="black-text"> Investment in national pension scheme</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="e" name="edu_loan" type="text" class="validate black-text" required >
+                            <label for="e" class="black-text"> Interest component of education loan</label>
+                        </div>
+
+                        <!--#########################################################3-->
+
+                            <div class="input-field col s4">
+                            <!--<i class="material-icons prefix">business</i>-->
+                            <label for="icon_prefix" class="black-text"> Medical Insurance :</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="icon_prefix" name="m_parent" type="text" class="validate black-text" required>
+                            <label for="icon_prefix" class="black-text">Of Parents</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="icon_e" name="m_you" type="text" class="validate black-text" required >
+                            <label for="icon_e" class="black-text">Of yourself and dependent</label>
+                        </div>
+                    </div>
+                        <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+                        <div class="row">
+                        <p><b>Donations Given</b><p>
+
+                                <!--DROPBOX 1-->
+                        <div class="input-field col s4" >
+                            {{form.d_1}}
+                           <label>Donations Given</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="d1" name="d11" type="text" class="validate black-text"  required>
+                            <label for="d1" class="black-text">Amount</label>
+                        </div>
+                            <div class="input-field col s4">
+                            <input id="d2" name="d12" type="text" class="validate black-text" required >
+                            <label for="d2" class="black-text">Amount</label>
+                        </div>
+
+                            <!--DROPBOX 2-->
+
+                        <div class="input-field col s4" >
+                            {{form.d_2}}
+                           <label>Donations Given</label>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <input id="d3" name="d21" type="text" class="validate black-text" required>
+                            <label for="d3" class="black-text">Amount</label>
+                        </div>
+                            <div class="input-field col s4">
+                            <input id="d4" name="d22" type="text" class="validate black-text" required >
+                            <label for="d4" class="black-text">Amount</label>
+                        </div>
+
+                            <!--DROPBOX 3-->
+
+                            <div class="input-field col s4" >
+                            {{form.d_3}}
+                           <label>Donations Given</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="d5" name="d31" type="text" class="validate black-text" required >
+                            <label for="d5" class="black-text">Amount</label>
+                        </div>
+                            <div class="input-field col s4">
+                            <input id="d6" name="d32" type="text" class="validate black-text" required>
+                            <label for="d6" class="black-text">Amount</label>
+                        </div>
+
+                    </div>
+                        <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+                        <div class="row">
+                            <p><b> Royalty Received</b></p>
+
+                        <div class="input-field col s4">
+                            <label  class="black-text">1)  Section 80 QQB</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="s1" name="section_1" type="text" class="validate black-text"  required>
+                            <label for="s1" class="black-text">Amount</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <label  class="black-text">2)  Section 80 QQB</label>
+                        </div>
+                            <div class="input-field col s6">
+                            <input id="s2" name="section_2" type="text" class="validate black-text" required >
+                            <label for="s2" class="black-text">Amount</label>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+                        <p><b>Any Other Deductions</b><p>
+                        <div class="input-field col s12">
+                            <textarea id="icon_prefix2" name="other_deduct" class="materialize-textarea black-text" required ></textarea>
+                            <label for="icon_prefix2" class="black-text">Other Deductions</label>
+                        </div>
+                        <br>
+                    <!--#########################################################################-->
+                        <p><b>Bank Details</b><p>
+                        <div class="input-field col s6">
+                            <input id="ic" name="ifsc" type="text" class="validate black-text" required  >
+                            <label for="ic" class="black-text">IFSC Code</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="an" name="acc" type="text" class="validate black-text" required  >
+                            <label for="an" class="black-text">Account Number</label>
+                        </div>
+
+                        <p><b>Best Time to Call You :) </b><p>
+                        <div class="input-field col s6" >
+                            {{form.time}}
+                            <label>Time to call you</label>
+                        </div>
+
+
+                        <div align="left" class="col offset-s7 s5">
+                            <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
+                                <i class="mdi-content-send right white-text"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

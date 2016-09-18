@@ -1,0 +1,66 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<html>
+
+<head>
+    <title>Welcome | EasyReturns</title>
+</head>
+
+{% include 'head.html' %}
+
+
+   <body id="top" class="scrollspy">
+
+    {% include 'nav.html' %}
+
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <h5 class="text_h center header cd-headline letters type">
+                    <span>filing income tax return is</span>
+                    <br>
+                    <span class="cd-words-wrapper waiting">
+                        <b class="is-visible">simple</b>
+                        <b>secure</b>
+                        <b>fast</b>
+                    </span>
+                </h5>
+            </div>
+        </div>
+
+        <!--Intro and service-->
+        <div id="intro" class="section scrollspy">
+            <div class="container">
+            <div class="row">
+                <div  class="col s12">
+                    <h2 class="center header text_h2"> Pay your tax with a click.</h2>
+                </div>
+
+                <div  class="col s12 m4 l4">
+                    <div class="center promo promo-example">
+                        <i class="mdi-image-flash-on"></i>
+                        <h5 class="promo-caption">Tax filing in 24 hours</h5>
+                        <p class="light center">We guarantee to file your income tax return under 24 hours</p>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="center promo promo-example">
+                        <i class="mdi-content-undo"></i>
+                        <h5 class="promo-caption">Tax Refund</h5>
+                        <p class="light center">If you have paid extra tax, we assure you to get your tax refund too.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="center promo promo-example">
+                        <i class="mdi-hardware-desktop-windows"></i>
+                        <h5 class="promo-caption">Simply Register</h5>
+                        <p class="light center">Register and upload your Form 16 and its done.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

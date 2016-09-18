@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Settings{{ block.super }}{% endblock %}
+{% block content %}
+{% if request.user and thing.slug == None %}
+<a href="{% url 'registration_create_thing' %}">Create Profile</a>
+{% else %}
+
+                <div class="col m5 l3 white">
+                    <div class="card collection">
+
+                        <a href="{% url 'settings' %}" class="collection-item active" >Profile</a>
+
+                        <a href="{% url 'auth_password_change' %}" class="collection-item ">Change Password</a>
+
+                        <a href="#" class="collection-item ">FAQs</a>
+
+                        <a href="{% url 'auth_logout' %}" class="collection-item ">Log Out</a>
+
+                    </div>
+                </div>
+
+<!-------------------------------------------------------------------------------------------------------------------------------->
+
+                <div class="col s4 m7 l9 white">
+                    <div class="card">
+                        <div class="card-content">
+                            <span style="font-size: 30pt; font-weight: lighter">
+                                Welcome, {{ thing.first_name|title}}&nbsp;{{ thing.last_name|title }}</span>
+
+                            <br>
+
+                            <p>Your Profile Page</p>
+
+
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input  disabled value="{{ thing.first_name|title }}"   name="first_name" type="text" class="validate black-text" >
+                                <label  class="black-text">First Name :</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input disabled value="{{ thing.last_name|title }}" name="last_name" type="text" class="validate black-text" >
+                                <label  class="black-text">Last Name :</label>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">info_outline</i>
+                              <input disabled value="{{ thing.pan }}" name="pan" id="disabled" type="text"class="validate black-text" maxlength="10">
+                              <label for="disabled"  class="black-text">PAN :</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input disabled  value="{{ user.email }}" name="email" type="text" class="validate black-text" maxlength="10">
+                                <label  class="black-text">Email</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">phone</i>
+                                <input disabled value="{{ thing.phone }}" name="phone" type="text" class="validate black-text" maxlength="10">
+                                <label  class="black-text">Phone :</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">perm_contact_calendar</i>
+                                <input  disabled value="{{ thing.dob }}" type="date" name="dob" class="datepicker black-text">
+                                <label  class="black-text">Date Of Birth :</label>
+                            </div>
+
+
+                            <div class="card-action.blue">
+                                <p>
+                                    <font size="3.5">
+                                        Want to update any detail?<a href="{% url 'edit_thing' slug=thing.slug %}">Edit Profile</a>
+                                    </font>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endif %}
+<script>
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 90, // Creates a dropdown of 15 years to control year
+    format: 'dd-mm-yyyy' });
+</script>
+
+{% endblock %}

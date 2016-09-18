@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}Edit Profile{{ block.super }}{% endblock %}
+{% block content %}
+
+<style>
+    #dotted{
+    border: 0px;
+    border-bottom:1.5px dotted #000;
+}​
+</style>
+
+
+<br>
+    <div class="card-content">
+
+        <p>&#8592; <a href="{% url 'settings' %}">Back to Profile</a></p>
+
+        <span style="font-size: 30pt; font-weight: lighter">Edit Profile</span>
+
+    <form class="col s12" role="form" action="" method="post">{% csrf_token %}
+          <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input  value="{{ thing.first_name }}"   name="first_name" type="text" class="validate black-text" >
+                <label  class="black-text">First Name :</label>
+              </div>
+
+              <div class="input-field col s6">
+                <input value="{{ thing.last_name }}" name="last_name" type="text" class="validate black-text" >
+                <label  class="black-text">Last Name :</label>
+              </div>
+
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">info_outline</i>
+                <input  value="{{ thing.pan }}" name="pan" type="text" id="dotted" class="validate black-text" maxlength="10" readonly>
+                <label  class="black-text">PAN :</label>
+              </div>
+
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">phone</i>
+                <input value="{{ thing.phone }}" name="phone" type="text" class="validate black-text" maxlength="10">
+                <label  class="black-text">Phone :</label>
+              </div>
+
+              <div class="input-field col s12">
+                  <i class="material-icons prefix">perm_contact_calendar</i>
+                <input value="{{ thing.dob }}" type="date" name="dob" class="datepicker">
+                <!--<input  name="dob" type="datetime" class="validate black-text" >-->
+                <label  class="black-text">Date Of Birth :</label>
+              </div>
+
+              <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Save' %}" />
+
+        </div>
+    </form>
+
+    </div>
+
+    <script>
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 90, // Creates a dropdown of 15 years to control year
+        format: 'dd-mm-yyyy' });
+    </script>
+
+{% endblock %}

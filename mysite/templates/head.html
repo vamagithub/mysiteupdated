@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+<head>
+<!---  Favico  --->
+    <link rel="icon" href="{% static 'img/e.png' %} " type="image/gif" sizes="40*40">
+
+
+<!--  CSS  -->
+    <script src="{% static 'min/plugin-min.js' %} "></script>
+    <script src="{% static 'min/custom-min.js' %} "></script>
+
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">-->
+
+    <link href="{% static 'min/plugin-min.css' %} " rel="stylesheet">
+    <link href="{% static 'min/custom-min.css' %} " rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css/style_b.css' %} ">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--  Scripts  -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script>
+         $(document).ready(function() {
+            $('select').material_select();
+          });
+
+    </script>
+
+
+</head>
+
+
+
+
+
+

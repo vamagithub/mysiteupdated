@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load material_form %}
+
+{% block title %}Activation Complete{{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="card">
+
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Your account is now activated.</span><br>
+
+    <div class="card-action.blue">
+           <p><font size="3.5">
+                Click her to visit our <a href="{% url 'auth_login' %}">HomePage</a>
+               </font> </p>
+    </div>
+    </div>
+
+</div>
+
+{% endblock %}
